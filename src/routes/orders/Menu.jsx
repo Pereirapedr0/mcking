@@ -10,7 +10,7 @@ export default function Menu() {
   const submit = useSubmit();
 
   const handleAdd = (burger) => {
-    submit({ name: burger.name, price: burger.price }, {
+    submit({ name: burger.name, price: burger.price, img: burger.image }, {
       method: "post", encType: "application/json", 
     });
   };

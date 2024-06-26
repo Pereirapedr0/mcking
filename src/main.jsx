@@ -16,6 +16,7 @@ import Order from "./routes/orders/Order";
 import Menu from "./routes/orders/Menu";
 import Summary from "./routes/orders/Summary";
 import ErrorPage from "./ErrorPage";
+import Confirm from "./routes/orders/Confirm";
 
 
 const router = createBrowserRouter(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
           <Route path="summary" element={<Summary />} loader={listOrder} />
         </Route>
       </Route>
+      <Route path="confirm" element={<Confirm />} loader={listOrder} errorElement={<ErrorPage />} />
     </>
   )
 );
