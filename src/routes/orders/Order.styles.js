@@ -2,12 +2,13 @@ const styles = {
   container: {
     display: 'flex',
     justifyContent: 'center',
-    height: '100%',    
+    height: '100%',
+    
   },
   box: {
-    // backgroundColor: '#32713d',
+    backgroundColor: '#EEE8AA',
     padding: '32px',
-    borderRadius: '8px',
+    borderRadius: '20px',
     boxShadow: '0 3px 5px rgba(0, 0, 0, 0.2)',
     textAlign: 'center',
     maxWidth: '400px',

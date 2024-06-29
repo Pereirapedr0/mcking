@@ -1,6 +1,6 @@
 const styles = {
   container: {
-    height: '75%',
+    height: 'auto',
     overflow: 'scroll',
     '&::-webkit-scrollbar': {
       display: 'none',
@@ -25,7 +25,7 @@ const styles = {
     bottom: 0,
     left: 0,
     right: 0,
-    height: '50px',
+    height: 'auto',
     background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))',
     pointerEvents: 'none',
   },
@@ -50,6 +50,12 @@ const styles = {
     },
     width: '100%',
   },
+  divider: {
+    marginTop: '5px',
+    backgroundColor: '#EEE8AA',
+    height: '15px',
+  },
+
   
 };
 

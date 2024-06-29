@@ -14,7 +14,7 @@ const styles = {
     textAlign: 'left',
   },
   rightContainer: {
-    textAlign: 'right',
+    textAlign: 'center',
   },
   priceBox: {
     textAlign: 'center',
