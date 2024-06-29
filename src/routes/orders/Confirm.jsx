@@ -1,11 +1,13 @@
 import React from "react";
-import { Box, Typography, Container, Button } from '@mui/material';
-import { useLoaderData } from 'react-router-dom';
+import { Box, Typography, Container, Button, Divider } from '@mui/material';
+import { useLoaderData, Outlet } from 'react-router-dom';
 import styles from './Confirm.styles';
+
 
 export default function Confirm() {
   const orderList = useLoaderData();
   return (
+    <>
     <Container sx={styles.container}>
       <Box sx={styles.boxRelativeToFadeOut}>
         {orderList.map((order, index) => (
@@ -20,7 +22,15 @@ export default function Confirm() {
         ))}
         <Box sx={styles.boxStickyToFadeOut} />
       </Box>
+      <Divider sx={styles.divider} />
+      <Container disableGutters sx={styles.buttonContainer}>
+        <Button disableRipple sx={styles.cancelButton}>Método de Pagamento</Button>
+        <Button disableRipple sx={styles.buyButton}
+          onClick={() => navigate('/order/menu')}>Menu</Button>
+      </Container>
     </Container>
+    < Outlet />
+    </>
   )
 }
 

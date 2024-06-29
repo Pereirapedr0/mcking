@@ -7,7 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 export default function Summary() {
   const orderList = useLoaderData();
   const navigate = useNavigate();
-  // TODO: calcular total
+  // TODO: calcular total - feito
   let orderTotal = 0.00;
   for (let i = 0; i < orderList.length; i++) {
     orderTotal = orderTotal + parseFloat(orderList[i].price);
@@ -18,7 +18,7 @@ export default function Summary() {
       <Container disableGutters sx={styles.horizontalContainer}>
         <Container disableGutters sx={styles.leftContainer}>
           <Typography variant="h6">Resumo do Pedido</Typography>
-          {/* TODO: Mostar nome do item + preço */}
+          {/* TODO: Mostar nome do item + preço - feito*/}
           {orderList.map((order, index) => (
             <Typography variant="body2" key={index}>{order.name} R$ {order.price}</Typography>
           ))}
@@ -26,7 +26,7 @@ export default function Summary() {
         <Container disableGutters sx={styles.rightContainer}>
           <Typography variant="h6">Total do Pedido</Typography>
           <Box sx={styles.priceBox} >
-            {/* TODO: MOSTRAR TOTAL */}
+            {/* TODO: MOSTRAR TOTAL - feito*/}
             <Typography>R$ {orderTotal.toFixed(2)}</Typography>
           </Box>
         </Container>
@@ -34,7 +34,7 @@ export default function Summary() {
       <Container disableGutters sx={styles.buttonContainer}>
         <Button disableRipple sx={styles.cancelButton}>Cancelar</Button>
         <Button disableRipple sx={styles.buyButton}
-          onClick={() => navigate('/confirm')}>Comprar</Button>
+          onClick={() => navigate('/order/confirm')}>Comprar</Button>
       </Container>
     </Container>
   )

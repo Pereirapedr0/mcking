@@ -17,11 +17,6 @@ const styles = {
   itemBox: {
     flexGrow: 1,
   },
-  divider: {
-    marginTop: '5px',
-    backgroundColor: '#32713d',
-    height: '15px',
-  },
   boxRelativeToFadeOut: { 
     position: 'relative', 
   },
@@ -34,17 +29,28 @@ const styles = {
     background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))',
     pointerEvents: 'none',
   },
-  addButton: {
+  buttonContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  cancelButton: {
     backgroundColor: '#32713d',
     color: '#fff',
     '&:hover': {
       backgroundColor: '#32713d',
     },
-    padding: 0,
-    width: '10px',
-    minWidth: '30px',
-    textAlign: 'center',
+    width: '100%',
   },
+  buyButton: {
+    backgroundColor: '#32713d',
+    color: '#fff',
+    '&:hover': {
+      backgroundColor: '#32713d',
+    },
+    width: '100%',
+  },
+  
 };
 
 export default styles;
