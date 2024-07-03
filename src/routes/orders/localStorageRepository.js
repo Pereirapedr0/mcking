@@ -12,3 +12,9 @@ export const listOrder = async () => {
   const order = JSON.parse(window.localStorage.getItem('order') || '[]');
   return order;
 }
+
+export const getOrder = async (burguers) => {
+  const order = JSON.parse(window.localStorage.getItem('order') || '[]');
+  const item = order.find((order) => order.name == burguers);
+  return item;
+}

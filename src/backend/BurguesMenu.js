@@ -4,30 +4,134 @@ import baconBurguer from '../assets/bacon_burger.webp';
 import veggieBurguer from '../assets/veggie_burger.jpeg';
 import bbqBurguer from '../assets/bbq_burger.jpg';
 
+export const ingredients = {
+  bread: {
+    namePT: 'Pão',
+  },
+  tofu: {
+    namePT: 'Tofu',
+    price: '0,49'
+  },
+  picles: {
+    namePT: 'Picles',
+    price: '0,49'
+  },
+  cheese: {
+    namePT: 'Queijo',
+    price: '0.99',
+  },
+  meat: {
+    namePT: 'Carne',
+    price: '1.99',
+  },
+  bacon: {
+    namePT: 'Bacon',
+    price: '1.19',
+  },
+  barbecue: {
+    namePT: 'Barbecue',
+    price: '0.99',
+  },
+  salad: {
+    namePT: 'Salada',
+    price: '0,49',
+  },
+  veggieMeat: {
+    namePT: 'Hamburguer de Planta',
+    price: '0.99'
+  }
+}
+
 export const burgers = [
   {
     name: 'Cheese Burger',
+    ingredients: {
+      bread: 2,
+      meat: 1,
+      cheese: 1,
+      salad: 1,
+    },
     price: '4.99',
-    image: cheeseBurguer, 
+    image: cheeseBurguer,
   },
   {
     name: 'Classic Burger',
+    ingredients: {
+      bread: 2,
+      meat: 1,
+    },
+    salad: 1,
     price: '5.99',
-    image: classicBurguer, 
+    image: classicBurguer,
   },
   {
     name: 'Bacon Burger',
+    ingredients: {
+      bread: 2,
+      meat: 1,
+      cheese: 1,
+      bacon: 3,
+      salad: 1,
+    },
+    extras: [{
+      name: 'meat',
+      limitAdd: 1,
+    }, {
+      name: 'bacon',
+      limitAdd: 2,
+    }],
     price: '7.99',
     image: baconBurguer,
   },
   {
     name: 'Veggie Burger',
+    ingredients: {
+      bread: 2,
+      veggieMeat: 1,
+      tofu: 1,
+      picles: 1,
+      salad: 2,
+    },
     price: '5.49',
-    image: veggieBurguer, 
+    image: veggieBurguer,
+    extras: [{
+      name: 'veggieMeat',
+      limitAdd: 1,
+    }, {
+      name: 'tofu',
+      limitAdd: 2,
+    }]
   },
   {
     name: 'BBQ Burger',
+    ingredients: {
+      bread: 2,
+      meat: 2,
+      cheese: 1,
+      bacon: 3,
+      barbecue: 1,
+      salad: 1,
+    },
     price: '8.99',
-    image: bbqBurguer, 
+    image: bbqBurguer,
+    extras: [{
+      name: 'meat',
+      limitAdd: 1,
+    }, {
+      name: 'bacon',
+      limitAdd: 2,
+    },
+    {
+      name: 'barbecue',
+      limitAdd: 1,
+    },
+    {
+      name: 'cheese',
+      limitAdd: 2,
+    },
+    {
+      name: 'salad',
+      limitAdd: 1,
+    }]
   },
 ];
