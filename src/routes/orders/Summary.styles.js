@@ -26,7 +26,7 @@ const styles = {
     justifyContent: 'space-around',
   },
   cancelButton: {
-    backgroundColor: '#962e12',
+    backgroundColor: '#708090',
     color: '#fff',
     '&:hover': {
       backgroundColor: '#962e12',
@@ -34,7 +34,7 @@ const styles = {
     width: '100%',
   },
   buyButton: {
-    backgroundColor: '#32713d',
+    backgroundColor: '#708090',
     color: '#fff',
     '&:hover': {
       backgroundColor: '#32713d',

@@ -19,7 +19,7 @@ const styles = {
   },
   divider: {
     marginTop: '5px',
-    backgroundColor: '#32713d',
+    backgroundColor: '#F4A460',
     height: '15px',
   },
   boxRelativeToFadeOut: { 

@@ -28,20 +28,9 @@ export default function Confirm() {
         ))}
         <Box sx={styles.boxStickyToFadeOut} />
       </Box>
-      <Box sx={styles.priceBox} >
-            <Typography>Total R$ {orderTotal.toFixed(2)}</Typography>
-          </Box>
-      <Divider sx={styles.divider} />
-      <Container disableGutters sx={styles.buttonContainer}>
-        <Button disableRipple sx={styles.cancelButton}>Método de Pagamento</Button>
-        <Button disableRipple sx={styles.buyButton}
-          onClick={() => navigate('/order/menu')}>Menu</Button>
-      </Container>
-      
+            
     </Container>
     < Outlet />
     </>
   )
 }
-
-

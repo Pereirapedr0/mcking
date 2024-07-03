@@ -6,7 +6,7 @@ const styles = {
     
   },
   box: {
-    backgroundColor: '#EEE8AA',
+    backgroundColor: '#F4A460',
     padding: '32px',
     borderRadius: '20px',
     boxShadow: '0 3px 5px rgba(0, 0, 0, 0.2)',

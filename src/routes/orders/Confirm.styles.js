@@ -1,6 +1,6 @@
 const styles = {
   container: {
-    height: 'auto',
+    height: '75%',
     overflow: 'scroll',
     '&::-webkit-scrollbar': {
       display: 'none',
@@ -35,24 +35,24 @@ const styles = {
     justifyContent: 'space-around',
   },
   cancelButton: {
-    backgroundColor: '#32713d',
+    backgroundColor: '#778899',
     color: '#fff',
     '&:hover': {
-      backgroundColor: '#32713d',
+      backgroundColor: '#0000FF',
     },
     width: '100%',
   },
   buyButton: {
-    backgroundColor: '#32713d',
+    backgroundColor: '#778899',
     color: '#fff',
     '&:hover': {
-      backgroundColor: '#32713d',
+      backgroundColor: '#0000FF',
     },
     width: '100%',
   },
   divider: {
     marginTop: '5px',
-    backgroundColor: '#EEE8AA',
+    backgroundColor: '#F4A460',
     height: '15px',
   },
 

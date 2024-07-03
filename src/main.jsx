@@ -27,7 +27,9 @@ const router = createBrowserRouter(
         <Route path="menu" element={<Menu />} action={addBurger}>
           <Route path="summary" element={<Summary />} loader={listOrder} />
         </Route>
-        <Route path="confirm" element={<Confirm />} loader={listOrder} errorElement={<ErrorPage />} />
+        <Route path="confirm" element={<Confirm />} loader={listOrder} errorElement={<ErrorPage />} >
+          <Route path="summary" element={<Summary />} loader={listOrder} />
+        </Route>
       </Route>
       
     </>
