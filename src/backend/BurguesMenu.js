@@ -4,6 +4,7 @@ import baconBurguer from '../assets/bacon_burger.webp';
 import veggieBurguer from '../assets/veggie_burger.jpeg';
 import bbqBurguer from '../assets/bbq_burger.jpg';
 
+
 export const ingredients = {
   bread: {
     namePT: 'Pão',

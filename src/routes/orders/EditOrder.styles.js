@@ -7,6 +7,10 @@ const styles = {
       },
       backgroundColor: '#fff',
     },
+    horizontalBox: {
+      display: 'flex',
+      flexDirection: 'row',
+    },
     listBox: {
       display: 'flex',
       alignItems: 'center',

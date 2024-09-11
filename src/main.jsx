@@ -9,7 +9,7 @@ import {
 
 import "./index.css";
 
-import { addBurger, listOrder, getOrder } from './routes/orders/localStorageRepository';
+import { addBurger, listOrder, getOrder, addIngredients } from './routes/orders/localStorageRepository';
 
 import WelcomePage from "./routes/WelcomePage";
 import Order from "./routes/orders/Order";
@@ -34,6 +34,7 @@ const router = createBrowserRouter(
         <Route 
           path="editOrder/:name"
           element={<EditOrder />}
+          action={addIngredients}
           loader={({ params }) => {
               return getOrder(params.name);
           }}
