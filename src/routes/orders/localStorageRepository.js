@@ -22,10 +22,12 @@ export const getOrder = async (burguers) => {
 export const addIngredients = async ({ request }) => {
   const item = await request.json();
   const { ingrediente, pedido } = item;
-  const order = JSON.parse(window.localStorage.getItem('order') || '[]');
-  const pedidoParaAlterar = order.find((order) => order.name == pedido);
-  const pedidoAlterado = 
-  console.log(pedidoParaAlterar);
+  const orders = JSON.parse(window.localStorage.getItem('order') || '[]');
+  const pedidoParaAlterar = orders.find((order) => order.name == pedido);
+  pedidoParaAlterar.ingredients[ingrediente] = pedidoParaAlterar.ingredients[ingrediente] + 1;
+  const indice = orders.findIndex(order => pedido.name === order.name);
+  orders[indice] = pedidoParaAlterar; 
+  window.localStorage.setItem('order', JSON.stringify(orders));
   return null;
 }
 
