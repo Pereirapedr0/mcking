@@ -8,38 +8,47 @@ import bbqBurguer from '../assets/bbq_burger.jpg';
 export const ingredients = {
   bread: {
     namePT: 'Pão',
+    id: 'bread',
   },
   tofu: {
     namePT: 'Tofu',
-    price: '0,49'
+    price: '0,49',
+    id: 'tofu',
   },
   picles: {
     namePT: 'Picles',
-    price: '0,49'
+    price: '0,49',
+    id: 'picles',
   },
   cheese: {
     namePT: 'Queijo',
     price: '0.99',
+    id: 'cheese',
   },
   meat: {
     namePT: 'Carne',
     price: '1.99',
+    id: 'meat',
   },
   bacon: {
     namePT: 'Bacon',
     price: '1.19',
+    id: 'bacon',
   },
   barbecue: {
     namePT: 'Barbecue',
     price: '0.99',
+    id: 'barbecue',
   },
   salad: {
     namePT: 'Salada',
     price: '0,49',
+    id: 'salad',
   },
   veggieMeat: {
     namePT: 'Hamburguer de Planta',
-    price: '0.99'
+    price: '0.99',
+    id: 'veggieMeat',
   }
 }
 

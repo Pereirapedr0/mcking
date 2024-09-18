@@ -1,5 +1,5 @@
-import { redirect } from "react-router-dom";
-import {ingredients} from "../../backend/BurguesMenu"
+import { redirect, useLoaderData } from "react-router-dom";
+import { burgers } from "../../backend/BurguesMenu";
 
 export const addBurger = async ({ request }) => {
   const item = await request.json();
@@ -21,31 +21,70 @@ export const getOrder = async (burguers) => {
 
 export const addIngredients = async ({ request }) => {
   const item = await request.json();
-  const { ingrediente, pedido } = item;
+  const { ingrediente, pedido, edit } = item;
   const orders = JSON.parse(window.localStorage.getItem('order') || '[]');
-  const pedidoParaAlterar = orders.find((order) => order.name == pedido);
-  pedidoParaAlterar.ingredients[ingrediente] = pedidoParaAlterar.ingredients[ingrediente] + 1;
-  const indice = orders.findIndex(order => pedido.name === order.name);
-  orders[indice] = pedidoParaAlterar; 
-  window.localStorage.setItem('order', JSON.stringify(orders));
-  return null;
-}
+  const pedidoParaAlterar = orders.find((order) => order.name === pedido);
 
-export const removeIngredients = async ({ request }) => {
-  const item = await request.json();
-  const {ingrediente , pedido} = item;
-  const orders = JSON.parse(window.localStorage.getItem('order') || '[]');
-  const removerIngrediente = orders.find((order) => order.name === pedido);
-  removerIngrediente.ingredients[ingrediente] = removerIngrediente.ingredients[ingrediente] - 1;
-  const indice = orders.findIndex(order => pedido.name === order.name);
-  orders[indice] = removerIngrediente;
+  const indexBurger = burgers.findIndex((burguer) => {
+    return burguer.name === pedido
+  })
+
+  const indexIngredient = burgers[indexBurger].extras.findIndex((extra) => {
+    return extra.name === ingrediente
+  })
+
+  if (edit === "add"){
+    const limit = burgers[indexBurger].extras[indexIngredient].limitAdd;
+
+    const inicial = 2;
+    const maximoAdicional = 2;
+    let resultado = inicial;
+
+
+    if (inicial + maximoAdicional > resultado) {
+      resultado += 1
+    }
+
+    if (burgers[indexBurger].ingredients[ingrediente] + limit > pedidoParaAlterar.ingredients[ingrediente]){
+      pedidoParaAlterar.ingredients[ingrediente] += 1;
+    }
+  }
+  if (edit === "remove") {
+    const minimo = 0;
+    if (pedidoParaAlterar.ingredients[ingrediente] > 0) {
+    pedidoParaAlterar.ingredients[ingrediente] -= 1;
+    }
+  }
+
+  const indice = orders.findIndex(order => pedido === order.name);
+  orders[indice] = pedidoParaAlterar;
   window.localStorage.setItem('order', JSON.stringify(orders));
+
   
-    return null;
-}
+
+  return null;
+};
+
+// export const removeIngredients = async ({ request }) => {
+//   const item = await request.json();
+//   const { ingrediente, pedido } = item;
+//   const orders = JSON.parse(window.localStorage.getItem('order') || '[]');
+//   const removerIngrediente = orders.find((order) => order.name === pedido);
+
+//   if (removerIngrediente.ingredients[ingrediente] > 0) {
+//     removerIngrediente.ingredients[ingrediente] -= 1;
+//   }
+
+//   const indice = orders.findIndex(order => pedido === order.name);
+//   orders[indice] = removerIngrediente;
+//   window.localStorage.setItem('order', JSON.stringify(orders));
+
+//   return null;
+// };
+
 
 //alterar preços
-//alterar quantidades
 //limitar adiçoes
 //passar nome em portugues
 //resolver removeIngredients
+
