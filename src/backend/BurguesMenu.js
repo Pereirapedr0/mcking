@@ -12,42 +12,42 @@ export const ingredients = {
   },
   tofu: {
     namePT: 'Tofu',
-    price: '0,49',
+    price: 0.49,
     id: 'tofu',
   },
   picles: {
     namePT: 'Picles',
-    price: '0,49',
+    price: 0.49,
     id: 'picles',
   },
   cheese: {
     namePT: 'Queijo',
-    price: '0.99',
+    price: 0.99,
     id: 'cheese',
   },
   meat: {
     namePT: 'Carne',
-    price: '1.99',
+    price: 1.99,
     id: 'meat',
   },
   bacon: {
     namePT: 'Bacon',
-    price: '1.19',
+    price: 1.19,
     id: 'bacon',
   },
   barbecue: {
     namePT: 'Barbecue',
-    price: '0.99',
+    price: 0.99,
     id: 'barbecue',
   },
   salad: {
     namePT: 'Salada',
-    price: '0,49',
+    price: 0.49,
     id: 'salad',
   },
   veggieMeat: {
     namePT: 'Hamburguer de Planta',
-    price: '0.99',
+    price: 0.99,
     id: 'veggieMeat',
   }
 }
@@ -61,7 +61,7 @@ export const burgers = [
       cheese: 1,
       salad: 1,
     },
-    price: '4.99',
+    price: 4.99,
     image: cheeseBurguer,
   },
   {
@@ -71,7 +71,7 @@ export const burgers = [
       meat: 1,
     },
     salad: 1,
-    price: '5.99',
+    price: 5.99,
     image: classicBurguer,
   },
   {
@@ -90,7 +90,7 @@ export const burgers = [
       name: 'bacon',
       limitAdd: 2,
     }],
-    price: '7.99',
+    price: 7.99,
     image: baconBurguer,
   },
   {
@@ -102,7 +102,7 @@ export const burgers = [
       picles: 1,
       salad: 2,
     },
-    price: '5.49',
+    price: 5.49,
     image: veggieBurguer,
     extras: [{
       name: 'veggieMeat',
@@ -122,7 +122,7 @@ export const burgers = [
       barbecue: 1,
       salad: 1,
     },
-    price: '8.99',
+    price: 8.99,
     image: bbqBurguer,
     extras: [{
       name: 'meat',

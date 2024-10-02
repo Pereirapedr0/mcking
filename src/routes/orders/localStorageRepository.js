@@ -1,5 +1,5 @@
 import { redirect, useLoaderData } from "react-router-dom";
-import { burgers } from "../../backend/BurguesMenu";
+import { burgers, ingredients } from "../../backend/BurguesMenu";
 
 export const addBurger = async ({ request }) => {
   const item = await request.json();
@@ -29,30 +29,27 @@ export const addIngredients = async ({ request }) => {
     return burguer.name === pedido
   })
 
+  
   const indexIngredient = burgers[indexBurger].extras.findIndex((extra) => {
     return extra.name === ingrediente
   })
 
   if (edit === "add"){
     const limit = burgers[indexBurger].extras[indexIngredient].limitAdd;
+    const newPrice = parseFloat(pedidoParaAlterar.price) + ingredients[ingrediente].price
+    const podeAdicionar = burgers[indexBurger].ingredients[ingrediente] + limit > pedidoParaAlterar.ingredients[ingrediente];
+    
 
-    const inicial = 2;
-    const maximoAdicional = 2;
-    let resultado = inicial;
-
-
-    if (inicial + maximoAdicional > resultado) {
-      resultado += 1
-    }
-
-    if (burgers[indexBurger].ingredients[ingrediente] + limit > pedidoParaAlterar.ingredients[ingrediente]){
+    if (podeAdicionar) {
       pedidoParaAlterar.ingredients[ingrediente] += 1;
+      pedidoParaAlterar.price = parseFloat(newPrice).toFixed(2);
     }
   }
   if (edit === "remove") {
-    const minimo = 0;
+    const newPrice = parseFloat(pedidoParaAlterar.price) - ingredients[ingrediente].price
     if (pedidoParaAlterar.ingredients[ingrediente] > 0) {
-    pedidoParaAlterar.ingredients[ingrediente] -= 1;
+      pedidoParaAlterar.ingredients[ingrediente] -= 1;
+      pedidoParaAlterar.price = parseFloat(newPrice).toFixed(2);
     }
   }
 
