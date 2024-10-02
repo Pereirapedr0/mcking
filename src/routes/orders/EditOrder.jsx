@@ -27,29 +27,27 @@ export default function EditOrder() {
         return burger.name === order.name
     });
 
-    console.log(burgers[indexBurger].extras.findIndex(extra => {
-        return extra.name === ingredients.id
-    }))
-
     return (
         <>
             <h1>Edite seu pedido</h1>
             <Container sx={styles.container}>
-                {order.name} , {order.price}
+                <h3>{order.name} {order.price}</h3>
                     {Object.entries(order.ingredients).map(ingredient => {
+                        if (ingredient[0] === 'bread') return
                         return (
                             <Box key={ingredient[0]} sx={styles.horizontalBox}>
-                                <div>{ingredients[ingredient[0]].namePT}</div>
-                                <div>{ingredient[1]}</div>
-                                
+                                <Box sx={styles.itemBox}>{ingredients[ingredient[0]].namePT}</Box>
+                                <Box sx={styles.itemBox}>{ingredient[1]}</Box>                                
                                 {
-                                    burgers[indexBurger].extras.find(extra => extra.name === ingredients.id)
-                                    &&
-                                    <Button sx={styles.addButton} onClick={() => addIngredients(ingredient[0], order.name)}><AddIcon /></Button>
+                                    burgers[indexBurger].extras.find(extra => extra.name === ingredient[0])
+                                    ?
+                                    <Button sx={[styles.addButton, styles.itemBox]} onClick={() => addIngredients(ingredient[0], order.name)}><AddIcon /></Button>
+                                    :
+                                    <Button disabled sx={[styles.addButton, styles.itemBox]} onClick={() => addIngredients(ingredient[0], order.name)}><AddIcon /></Button>
                                 }
-                                <Button sx={styles.addButton} onClick={() => removeIngredients(ingredient[0], order.name)}><RemoveIcon /></Button>
-                                <div>{ingredients[ingredient[0]].price}</div>
-                                </Box>
+                                <Button sx={[styles.addButton, styles.itemBox]} onClick={() => removeIngredients(ingredient[0], order.name)}><RemoveIcon /></Button>
+                                <Box sx={styles.itemBox}>{ingredients[ingredient[0]].price}</Box>
+                            </Box>
                         );
                     })}
             </Container>
