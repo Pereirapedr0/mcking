@@ -84,7 +84,5 @@ export const addIngredients = async ({ request }) => {
 
 
 //alterar preços
-//limitar adiçoes
-//passar nome em portugues
-//resolver removeIngredients
+
 
