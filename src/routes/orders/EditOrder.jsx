@@ -39,7 +39,7 @@ export default function EditOrder() {
                                 <Box sx={styles.itemBox}>{ingredients[ingredient[0]].namePT}</Box>
                                 <Box sx={styles.itemBox}>{ingredient[1]}</Box>                                
                                 {
-                                    burgers[indexBurger].extras.find(extra => extra.name === ingredient[0])
+                                    burgers[indexBurger].extras && burgers[indexBurger].extras.find(extra => extra.name === ingredient[0])
                                     ?
                                     <Button sx={[styles.addButton, styles.itemBox]} onClick={() => addIngredients(ingredient[0], order.name)}><AddIcon /></Button>
                                     :
